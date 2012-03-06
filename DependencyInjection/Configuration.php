@@ -71,6 +71,7 @@ class Configuration implements ConfigurationInterface
                 ->booleanNode('debug')->defaultValue('%kernel.debug%')->end()
                 ->arrayNode('connections')
                     ->useAttributeAsKey('key')
+                    ->addDefaultsIfNotSet()
                     ->canBeUnset()
                     ->prototype('array')
                         ->children()
